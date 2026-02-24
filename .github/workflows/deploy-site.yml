@@ -1,0 +1,67 @@
+name: Deploy Website (Frontend)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Set Release Version
+        id: version
+        # Using short commit SHA as version since there are no tags
+        run: echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Upload Build Artifacts
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # Uploading only the dist folder content
+          source: "dist"
+          strip_components: 1
+          target: "${{ secrets.REMOTE_SITE_ROOT }}/releases/${{ steps.version.outputs.sha }}"
+
+      - name: Server-side Atomic Swap
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            ROOT="${{ secrets.REMOTE_SITE_ROOT }}"
+            SHA="${{ steps.version.outputs.sha }}"
+            REL_DIR="$ROOT/releases/$SHA"
+            TIMESTAMP=$(date +%Y%m%d%H%M%S)
+
+            # Transition Check: Backup physical directory if it exists
+            if [ -d "$ROOT/public_html" ] && [ ! -L "$ROOT/public_html" ]; then
+              mv "$ROOT/public_html" "$ROOT/public_html_backup_$TIMESTAMP"
+            fi
+
+            # Atomic Symlink Swap
+            ln -sfn $REL_DIR $ROOT/public_html_new
+            mv -fT $ROOT/public_html_new $ROOT/public_html
+
+            # Housekeeping: Keep last 3 releases
+            cd $ROOT/releases && ls -1dt * | tail -n +4 | xargs rm -rf
