@@ -1,0 +1,185 @@
+{
+    "navbar": {
+        "subtitle": "Gerenciador de Posições AAVE V3",
+        "features": "Recursos",
+        "advantages": "Vantagens",
+        "savings": "Economia",
+        "roadmap": "Roadmap",
+        "faq": "FAQ",
+        "swapNow": "Acesse o App"
+    },
+    "hero": {
+        "tagline": "Interface com Taxas Otimizadas",
+        "title1": "Máxima Eficiência de Custo",
+        "title2": "no Gerenciamento da Aave",
+        "description": "A alternativa inteligente para gerenciar suas posições de empréstimo na Aave V3. Faça swaps de dívida com 0% de taxa de execução e economize até 67% nos swaps de colateral em comparação com a interface oficial.",
+        "accessApp": "Acessar App",
+        "docs": "Docs",
+        "soon": "Em Breve",
+        "stats": {
+            "maxSavings": "Economia Máx.",
+            "executionFee": "Taxa de Execução",
+            "direct": "Sem Custódia",
+            "smartContractCall": "Acesso Direto ao Protocolo",
+            "instant": "Instantâneo",
+            "settlement": "Execução Atômica"
+        },
+        "howItWorks": {
+            "title": "Como funciona:",
+            "desc1": "A LilSwap atua como uma camada de execução leve e direta aos contratos da Aave.",
+            "desc2": "Como apenas executamos transações usando os smart contracts que já existem, seus fundos continuam 100% seguros na Aave. Nós simplesmente oferecemos a rota mais barata e eficiente para você."
+        }
+    },
+    "logosSection": {
+        "title": "Integrado aos principais mercados V3",
+        "moreComing": "Mais redes em breve"
+    },
+    "dashboard": {
+        "title": "Gerenciamento Focado em Swap",
+        "description": "Acompanhe seu patrimônio líquido multi-chain e execute swaps rápidos de dívida e colateral nos principais mercados em uma única interface.",
+        "positions": "Posições Multi-Chain",
+        "updatedNow": "Atualizado agora",
+        "netWorth": "Patrimônio",
+        "netApy": "APY Líquido",
+        "healthFactor": "Health Factor",
+        "supplies": "Supplies (Fornecido)",
+        "soon": "Em Breve",
+        "borrows": "Borrows (Emprestado)",
+        "swap": "Swap",
+        "noPositions": "Nenhuma posição encontada"
+    },
+    "features": {
+        "title": "DeFi Altamente Rentável",
+        "items": {
+            "efficiency": {
+                "title": "Construído para Máxima Eficiência",
+                "desc1": "Uma interface simples, direta ao ponto e focada em otimizar a troca das suas posições de lending sem pagar taxas extras. Nossa arquitetura é extremamente enxuta para você economizar o máximo possível.",
+                "desc2": "Pague apenas o gas da rede, sem taxas adicionais de adaptadores ao repassar sua dívida. Execute swaps puros de dívida com taxa 0% de execução direto do nosso painel."
+            },
+            "directAccess": {
+                "title": "Acesso Direto ao Protocolo",
+                "desc": "Interaja diretamente com os smart contracts do protocolo. Sem intermediários, sem tempo de atraso, apenas execução limpa e eficiente."
+            },
+            "lowCost": {
+                "title": "Swaps de Colateral de Baixo Custo",
+                "desc": "Recurso em desenvolvimento que vai oferecer taxas até 67% mais baratas em relação a adaptadores convencionais em todo o seu gerenciamento de colaterais."
+            }
+        }
+    },
+    "comparison": {
+        "title": "Por Que Usar a LilSwap?",
+        "subtitle": "Veja a nossa diferença nas taxas comparado com a interface oficial.",
+        "table": {
+            "feature": "Recurso",
+            "official": "Interface Oficial",
+            "lilswap": "LilSwap"
+        },
+        "features": {
+            "speed": {
+                "title": "Velocidade e Confiabilidade",
+                "official": "Muitos passos e atrasos nos adaptadores",
+                "lilswap": "Execução Direta e Instantânea"
+            },
+            "debtFees": {
+                "title": "Taxas de Swap de Dívida",
+                "official": "Taxas do Adaptador (~0.05%)",
+                "lilswap": "Taxa de Execução 0% (Só Gas)"
+            },
+            "collatFees": {
+                "title": "Taxas de Swap de Colateral",
+                "official": "Protocolo + Taxas do Adaptador (~0.30%)",
+                "lilswap": "67% Menor (~0.10%)"
+            },
+            "execType": {
+                "title": "Tipo de Execução",
+                "official": "Depende do Integrador",
+                "lilswap": "Smart Contract Direto"
+            }
+        }
+    },
+    "efficiency": {
+        "title": "Máxima Economia",
+        "subtitle": "Pare de pagar caro em taxas de transação. A LilSwap otimiza sua rota para garantir que você não perca seu yield com taxas.",
+        "benefits": {
+            "collat": {
+                "title": "Economize até 67% nos movimentos de colateral",
+                "desc": "Corte os custos ao meio comparado com as rotas padrões dos agregadores. Nunca mais pague a combinação de 0.25% de taxa do protocolo junto aos 0.05% de taxa de serviço."
+            },
+            "debt": {
+                "title": "Pague $0 para trocar dívidas",
+                "desc": "A maioria dos lugares vai cobrar uma taxa de serviço só pra passar pela UI deles na troca de dívidas. Nós cobramos simplesmente 0% em taxas de execução ao invés dos ~0.05%."
+            }
+        },
+        "calculator": {
+            "title": "Calculadora de Economia",
+            "example": "Exemplo de Swap:",
+            "soon": "Em Breve",
+            "collateralTab": "Colateral",
+            "debtTab": "Dívida",
+            "officialUI": "UI Oficial",
+            "estimatedFee": "Taxa Estimada",
+            "tradeSize": "Tamanho (USD)",
+            "youSave": "Você Economiza",
+            "disclaimer": "*As taxas de gas da rede sempre serão aplicáveis à ambas conexões."
+        }
+    },
+    "roadmap": {
+        "title": "Roadmap de Desenvolvimento",
+        "subtitle": "A nossa visão para o futuro do protocolo da LilSwap.",
+        "liveNow": "Ao Vivo",
+        "phase1": {
+            "title": "Fase 1",
+            "subtitle": "Fundamentos & Swaps de Dívida",
+            "desc": "Fundamentação dos recursos de migração de dívida em conjunto aos deploys nas principais Layer-2 para ter alcance máximo."
+        },
+        "phase2": {
+            "title": "Fase 2",
+            "subtitle": "Swaps de Colateral",
+            "desc": "Implementação das trocas de swaps de colaterais, com taxas visivelmente baixas comparadas as rotas diretas do mercado."
+        },
+        "phase3": {
+            "title": "Fase 3",
+            "subtitle": "Proteção Anti-MEV",
+            "desc": "Integração com o CoW Protocol para garantir execuções protegidas contra MEV, via proxies em todas as transações."
+        }
+    },
+    "faq": {
+        "title": "Perguntas Frequentes",
+        "q1": {
+            "title": "A LilSwap é um protocolo DeFi?",
+            "desc": "Não, somos uma interface alternativa altamente otimizada em termos de custos. Você interage sem intermediários com os contratos V3 oficiais da Aave, só que usando nossa estrutura construída em volta de eficiência de custos."
+        },
+        "q2": {
+            "title": "Por que as suas taxas são mais baixas que a interface oficial?",
+            "desc": "No DeFi, taxas de execução (como os ~0,05% em swaps de dívida) costumam ser tratadas como algo 'normal' e acabam sendo omitidas por interfaces que se dizem gratuitas. Na LilSwap, desafiamos esse padrão. Nossas taxas são menores — e inexistentes para dívidas — simplesmente porque optamos por não cobrar taxas de serviço onde outras interfaces as escondem. Acreditamos que o lucro deve ficar com você, garantindo transparência total sobre o custo real da sua operação."
+        },
+        "q3": {
+            "title": "Preciso migrar minhas posições para a LilSwap?",
+            "desc": "De forma alguma. Não é necessário fazer nenhum tipo de 'migração' ou depósito. Como a LilSwap opera como uma interface direta para o protocolo Aave V3, suas posições já existentes aparecerão automaticamente assim que você conectar sua carteira. Você pode começar a otimizar sua dívida e colateral instantaneamente sem precisar mover seus fundos."
+        },
+        "q4": {
+            "title": "A LilSwap é um agregador comum? Posso trocar qualquer token da minha carteira?",
+            "desc": "Não. Diferente de um agregador genérico onde você troca um token por outro na sua carteira, a LilSwap é uma ferramenta cirúrgica feita apenas para posições na Aave V3. Nosso foco é converter exclusivamente dívidas e colaterais entre si dentro do protocolo, garantindo a rota mais eficiente e barata que ferramentas comuns não conseguem oferecer."
+        }
+    },
+    "cta": {
+        "title": "Pronto para maximizar o seu yield?",
+        "subtitle": "Comece agora o gerenciamento das suas posições de empréstimos com 0% em taxas extras de execução e muita facilidade.",
+        "button": "Fazer Meu Primeiro Swap"
+    },
+    "footer": {
+        "tagline": "A interface definitiva para usuários hardcore de DeFi.",
+        "system": {
+            "checking": "Checando Sistemas...",
+            "offline": "Sistemas Fora do Ar",
+            "operational": "Sistemas Operacionais"
+        },
+        "resources": {
+            "title": "Recursos",
+            "docs": "Documentação",
+            "api": "API",
+            "soon": "Em Breve"
+        },
+        "rights": "Todos os direitos reservados."
+    }
+}

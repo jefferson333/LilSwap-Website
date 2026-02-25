@@ -1,13 +1,15 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const DashboardPreview = () => {
+    const { t } = useTranslation();
     return (
         <section className="py-20 bg-slate-50 dark:bg-[#0f1623]" id="dashboard">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Swap-Focused Management</h2>
+                    <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">{t('dashboard.title')}</h2>
                     <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                        Track your multi-chain net worth and execute lightning-fast debt and collateral swaps across all major V3 markets from a single interface.
+                        {t('dashboard.description')}
                     </p>
                 </div>
 
@@ -33,10 +35,10 @@ const DashboardPreview = () => {
                                     <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" />
                                     <path d="M12 12V8" />
                                 </svg>
-                                Multi-Chain Positions
+                                {t('dashboard.positions')}
                             </div>
                             <div className="text-xs text-slate-400 flex items-center gap-2">
-                                Updated just now <span className="material-symbols-outlined text-sm cursor-pointer hover:rotate-180 transition-transform">refresh</span>
+                                {t('dashboard.updatedNow')} <span className="material-symbols-outlined text-sm cursor-pointer hover:rotate-180 transition-transform">refresh</span>
                             </div>
                         </div>
 
@@ -52,15 +54,15 @@ const DashboardPreview = () => {
 
                                 <div className="flex gap-8">
                                     <div>
-                                        <div className="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">Net worth</div>
+                                        <div className="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">{t('dashboard.netWorth')}</div>
                                         <div className="font-mono text-xl font-bold dark:text-white">$50.402,34</div>
                                     </div>
                                     <div>
-                                        <div className="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">Net APY</div>
+                                        <div className="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">{t('dashboard.netApy')}</div>
                                         <div className="font-mono text-xl font-bold text-green-500">2.06%</div>
                                     </div>
                                     <div>
-                                        <div className="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">Health factor</div>
+                                        <div className="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">{t('dashboard.healthFactor')}</div>
                                         <div className="font-mono text-xl font-bold text-green-500">4.84</div>
                                     </div>
                                 </div>
@@ -68,7 +70,7 @@ const DashboardPreview = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div>
-                                    <h4 className="text-xs text-slate-500 uppercase font-bold mb-4">Supplies</h4>
+                                    <h4 className="text-xs text-slate-500 uppercase font-bold mb-4">{t('dashboard.supplies')}</h4>
                                     <div className="space-y-3">
                                         <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-[#0b1221] border border-border-light dark:border-border-dark hover:border-primary/30 transition-colors">
                                             <div className="flex items-center gap-3">
@@ -80,13 +82,13 @@ const DashboardPreview = () => {
                                                     <div className="text-xs text-slate-500 font-mono">60103.257 USDC</div>
                                                 </div>
                                             </div>
-                                            <span className="text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Soon</span>
+                                            <span className="text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">{t('dashboard.soon')}</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <h4 className="text-xs text-slate-500 uppercase font-bold mb-4">Borrows</h4>
+                                    <h4 className="text-xs text-slate-500 uppercase font-bold mb-4">{t('dashboard.borrows')}</h4>
                                     <div className="space-y-3">
                                         <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-[#0b1221] border border-border-light dark:border-border-dark">
                                             <div className="flex items-center gap-3">
@@ -100,7 +102,7 @@ const DashboardPreview = () => {
                                             </div>
                                             <button className="bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-xl text-sm font-bold flex items-center gap-1 shadow-lg shadow-primary/20 transition-all active:scale-95">
                                                 <span className="material-symbols-outlined text-sm font-bold">swap_horiz</span>
-                                                Swap
+                                                {t('dashboard.swap')}
                                             </button>
                                         </div>
 
@@ -116,7 +118,7 @@ const DashboardPreview = () => {
                                             </div>
                                             <button className="bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-xl text-sm font-bold flex items-center gap-1 shadow-lg shadow-primary/20 transition-all active:scale-95">
                                                 <span className="material-symbols-outlined text-sm font-bold">swap_horiz</span>
-                                                Swap
+                                                {t('dashboard.swap')}
                                             </button>
                                         </div>
                                     </div>
@@ -137,7 +139,7 @@ const DashboardPreview = () => {
                                         </div>
                                         <span className="font-bold dark:text-slate-300 text-sm">{network.name}</span>
                                     </div>
-                                    <span className="text-xs text-slate-500 italic">No positions</span>
+                                    <span className="text-xs text-slate-500 italic">{t('dashboard.noPositions')}</span>
                                 </div>
                             ))}
                         </div>

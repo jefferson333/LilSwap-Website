@@ -1,14 +1,14 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Features = () => {
+    const { t } = useTranslation();
     return (
         <section className="py-24 relative overflow-hidden" id="features">
-            <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none"></div>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 dark:text-white">DeFi Made Cost-Efficient</h2>
+                    <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 dark:text-white">{t('features.title')}</h2>
                 </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 h-auto md:h-[600px]">
                     <div className="md:col-span-2 row-span-2 bg-white dark:bg-card-dark rounded-3xl p-8 border border-border-light dark:border-border-dark relative overflow-hidden group hover:border-primary/50 transition-colors duration-300 shadow-lg">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-all duration-500"></div>
@@ -17,12 +17,12 @@ const Features = () => {
                                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                                     <span className="material-symbols-outlined text-primary text-2xl">bolt</span>
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 dark:text-white">Built for Maximum Fee Efficiency</h3>
+                                <h3 className="text-2xl font-bold mb-3 dark:text-white">{t('features.items.efficiency.title')}</h3>
                                 <p className="text-slate-600 dark:text-slate-400 max-w-md mb-4">
-                                    A simple, straight-to-the-point interface optimized for executing your lending positions without the heavy tax. We focus on lightweight logic so you pay less at checkout.
+                                    {t('features.items.efficiency.desc1')}
                                 </p>
                                 <p className="text-slate-600 dark:text-slate-400 max-w-md">
-                                    Only pay network gas—no added adapter fees for debt shifting. Execute pure 0% fee debt swaps directly via our dashboard.
+                                    {t('features.items.efficiency.desc2')}
                                 </p>
                             </div>
 
@@ -44,29 +44,32 @@ const Features = () => {
                     </div>
 
                     <div className="bg-white dark:bg-card-dark rounded-3xl p-8 border border-border-light dark:border-border-dark group hover:border-accent-orange/50 transition-colors duration-300 shadow-lg relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent-orange/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent-orange/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-accent-orange/20 transition-all duration-500"></div>
                         <div className="w-12 h-12 bg-accent-orange/10 rounded-xl flex items-center justify-center mb-4">
                             <span className="material-symbols-outlined text-accent-orange text-2xl">dns</span>
                         </div>
-                        <h3 className="text-xl font-bold mb-2 dark:text-white">Direct Protocol Access</h3>
+                        <h3 className="text-xl font-bold mb-2 dark:text-white">{t('features.items.directAccess.title')}</h3>
                         <p className="text-sm text-slate-600 dark:text-slate-400">
-                            Interact directly with underlying smart contracts. No middlemen, no delays, pure efficient execution.
+                            {t('features.items.directAccess.desc')}
                         </p>
                     </div>
 
                     <div className="bg-white dark:bg-card-dark rounded-3xl p-8 border border-border-light dark:border-border-dark group hover:border-accent-cyan/50 transition-colors duration-300 shadow-lg relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent-cyan/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent-cyan/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-accent-cyan/20 transition-all duration-500"></div>
                         <div className="w-12 h-12 bg-accent-cyan/10 rounded-xl flex items-center justify-center mb-4">
                             <span className="material-symbols-outlined text-accent-cyan text-2xl">percent</span>
                         </div>
-                        <h3 className="text-xl font-bold mb-2 dark:text-white">Low-Cost Collateral Swaps</h3>
+                        <h3 className="text-xl font-bold mb-2 dark:text-white">
+                            {t('features.items.lowCost.title')}
+                            <span className="ml-2 inline-block whitespace-nowrap text-[10px] uppercase bg-accent-cyan/20 text-accent-cyan px-1.5 py-0.5 rounded font-bold align-middle">{t('hero.soon')}</span>
+                        </h3>
                         <p className="text-sm text-slate-600 dark:text-slate-400">
-                            Upcoming feature offering up to 67% lower fees than standard adapters for all your collateral management needs.
+                            {t('features.items.lowCost.desc')}
                         </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

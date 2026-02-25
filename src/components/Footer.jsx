@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const LilLogo = ({ className = "w-6 h-6" }) => (
     <svg
@@ -18,14 +19,18 @@ const LilLogo = ({ className = "w-6 h-6" }) => (
 );
 
 const SystemStatus = () => {
+    const { t } = useTranslation();
     const [status, setStatus] = useState('checking');
+    const [apiVersion, setApiVersion] = useState(null);
 
     useEffect(() => {
         const checkHealth = async () => {
             try {
                 const response = await fetch('https://api.lilswap.xyz/v1/health');
                 if (response.ok) {
+                    const data = await response.json();
                     setStatus('operational');
+                    if (data.version) setApiVersion(data.version);
                 } else {
                     setStatus('offline');
                 }
@@ -39,11 +44,15 @@ const SystemStatus = () => {
         return () => clearInterval(interval);
     }, []);
 
+    const versionLabel = apiVersion ? (
+        <span className="text-slate-400 dark:text-slate-500 font-mono">API v{apiVersion}</span>
+    ) : null;
+
     if (status === 'checking') {
         return (
             <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-slate-400 animate-pulse"></span>
-                <span>Checking System...</span>
+                <span>{t('footer.system.checking')}</span>
             </div>
         );
     }
@@ -52,20 +61,24 @@ const SystemStatus = () => {
         return (
             <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                <span className="text-red-500 font-medium">System Offline</span>
+                <span className="text-red-500 font-medium">{t('footer.system.offline')}</span>
             </div>
         );
     }
 
     return (
-        <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-green-500 font-medium">Systems Operational</span>
+        <div className="flex items-center gap-3">
+            {versionLabel}
+            <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span className="text-green-500 font-medium">{t('footer.system.operational')}</span>
+            </div>
         </div>
     );
 };
 
 const Footer = () => {
+    const { t } = useTranslation();
     return (
         <footer className="bg-white dark:bg-background-dark border-t border-border-light dark:border-border-dark pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,7 +90,7 @@ const Footer = () => {
                             <span className="font-display font-bold text-lg dark:text-white">LilSwap</span>
                         </div>
                         <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                            The ultimate interface for DeFi power users.
+                            {t('footer.tagline')}
                         </p>
                         <div className="flex gap-4">
                             <a className="text-slate-400 hover:text-primary transition" href="https://x.com/0xInkCrypto" target="_blank" rel="noopener noreferrer">
@@ -104,18 +117,18 @@ const Footer = () => {
                     </div> */}
 
                     <div>
-                        <h4 className="font-bold mb-4 dark:text-white">Resources</h4>
+                        <h4 className="font-bold mb-4 dark:text-white">{t('footer.resources.title')}</h4>
                         <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-400">
                             <li>
                                 <span className="text-slate-400 dark:text-slate-500 flex items-center gap-2 cursor-not-allowed select-none">
-                                    Documentation
-                                    <span className="text-[10px] uppercase bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 px-1.5 py-0.5 rounded font-bold">Soon</span>
+                                    {t('footer.resources.docs')}
+                                    <span className="text-[10px] uppercase bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 px-1.5 py-0.5 rounded font-bold">{t('footer.resources.soon')}</span>
                                 </span>
                             </li>
                             <li>
                                 <span className="text-slate-400 dark:text-slate-500 flex items-center gap-2 cursor-not-allowed select-none">
-                                    API
-                                    <span className="text-[10px] uppercase bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 px-1.5 py-0.5 rounded font-bold">Soon</span>
+                                    {t('footer.resources.api')}
+                                    <span className="text-[10px] uppercase bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 px-1.5 py-0.5 rounded font-bold">{t('footer.resources.soon')}</span>
                                 </span>
                             </li>
                             {/* <li><a className="hover:text-primary transition" href="#">Audits</a></li> */}
@@ -134,7 +147,7 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-border-light dark:border-border-dark pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 dark:text-slate-500">
-                    <p>&copy; {new Date().getFullYear()} InkCrypto Finance. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} InkCrypto Finance. {t('footer.rights')}</p>
                     <SystemStatus />
                 </div>
             </div>

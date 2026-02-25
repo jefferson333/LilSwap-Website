@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const LilLogo = ({ className = "w-6 h-6" }) => (
     <svg
@@ -18,6 +19,12 @@ const LilLogo = ({ className = "w-6 h-6" }) => (
 );
 
 const Navbar = ({ isDarkMode, toggleDarkMode }) => {
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+    };
+
     const scrollTo = (id) => {
         const element = document.getElementById(id);
         if (element) {
@@ -43,22 +50,26 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
                                 <span className="px-1 py-0 rounded text-primary text-[8px] font-bold border-2 border-primary/30 mt-0.5">BETA</span>
                             </div>
                             <div className="flex items-center gap-2 mt-1 leading-none">
-                                <span className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em] sm:tracking-[0.2em]">AAVE V3 Position Manager</span>
+                                <span className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em] sm:tracking-[0.2em]">{t('navbar.subtitle')}</span>
                             </div>
                         </div>
                     </div>
 
                     {/* Desktop Navigation Links */}
                     <div className="hidden md:flex items-center space-x-8">
-                        <button onClick={() => scrollTo('dashboard')} className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer">Features</button>
-                        <button onClick={() => scrollTo('comparison')} className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer">Advantages</button>
-                        <button onClick={() => scrollTo('savings')} className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer">Savings</button>
-                        <button onClick={() => scrollTo('roadmap')} className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer">Roadmap</button>
-                        <button onClick={() => scrollTo('faq')} className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer">FAQ</button>
+                        <button onClick={() => scrollTo('dashboard')} className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer">{t('navbar.features')}</button>
+                        <button onClick={() => scrollTo('comparison')} className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer">{t('navbar.advantages')}</button>
+                        <button onClick={() => scrollTo('savings')} className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer">{t('navbar.savings')}</button>
+                        <button onClick={() => scrollTo('roadmap')} className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer">{t('navbar.roadmap')}</button>
+                        <button onClick={() => scrollTo('faq')} className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer">{t('navbar.faq')}</button>
                     </div>
 
                     {/* Actions */}
                     <div className="flex items-center gap-2 sm:gap-4">
+                        <div className="flex items-center gap-1 sm:gap-2 mr-2">
+                            <button onClick={() => changeLanguage('en')} className={`text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-1 rounded transition-colors ${i18n.resolvedLanguage === 'en' ? 'bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white' : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'}`}>EN</button>
+                            <button onClick={() => changeLanguage('pt-BR')} className={`text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-1 rounded transition-colors ${i18n.resolvedLanguage === 'pt-BR' ? 'bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white' : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'}`}>PT</button>
+                        </div>
                         <button
                             className="flex items-center justify-center w-10 h-10 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors rounded-full active:scale-90"
                             onClick={toggleDarkMode}
@@ -69,7 +80,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
                             </span>
                         </button>
                         <a href="https://app.lilswap.xyz" className="bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-bold px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl transition-all shadow-lg shadow-primary/20 active:scale-95">
-                            Swap Now
+                            {t('navbar.swapNow')}
                         </a>
                     </div>
                 </div>

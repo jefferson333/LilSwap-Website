@@ -1,10 +1,12 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const LogosSection = () => {
+    const { t } = useTranslation();
     return (
         <section className="py-12 bg-slate-50/50 dark:bg-background-dark/50 border-y border-border-light dark:border-border-dark backdrop-blur-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 mb-10">Integrated with major V3 markets</h3>
+                <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 mb-10">{t('logosSection.title')}</h3>
 
                 <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
                     {/* Main Markets */}
@@ -38,7 +40,7 @@ const LogosSection = () => {
                                 <span className="material-symbols-outlined text-lg font-bold">add</span>
                             </div>
                         </div>
-                        <span className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] ml-2">More landing soon</span>
+                        <span className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] ml-2">{t('logosSection.moreComing')}</span>
                     </div>
                 </div>
             </div>

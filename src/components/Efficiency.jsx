@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Efficiency = () => {
+    const { t } = useTranslation();
     const amounts = [
         100, 200, 300, 400, 500, 600, 700, 800, 900,
         1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000,
@@ -28,9 +30,9 @@ const Efficiency = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                     <div className="order-1 lg:order-1">
-                        <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 dark:text-white">Maximized Economy</h2>
+                        <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 dark:text-white">{t('efficiency.title')}</h2>
                         <p className="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
-                            Stop overpaying on transaction costs. LilSwap optimizes your route to ensure you keep more of your hard-earned yield.
+                            {t('efficiency.subtitle')}
                         </p>
 
                         <ul className="space-y-6">
@@ -39,8 +41,8 @@ const Efficiency = () => {
                                     <span className="material-symbols-outlined text-accent-cyan">savings</span>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-lg dark:text-white">Save up to 67% on every collateral move</h4>
-                                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Drastically reduce swap fees compared to standard aggregator routes. Never pay 0.25% protocol + 0.05% execution fees again.</p>
+                                    <h4 className="font-bold text-lg dark:text-white">{t('efficiency.benefits.collat.title')}</h4>
+                                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{t('efficiency.benefits.collat.desc')}</p>
                                 </div>
                             </li>
                             <li className="flex items-start gap-4">
@@ -48,8 +50,8 @@ const Efficiency = () => {
                                     <span className="material-symbols-outlined text-primary">price_check</span>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-lg dark:text-white">Pay $0 in protocol fees for debt shifting</h4>
-                                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Adapters charge a ~0.05% execution fee just to use them. We charge purely 0% execution fees for direct debt repayments and shifts.</p>
+                                    <h4 className="font-bold text-lg dark:text-white">{t('efficiency.benefits.debt.title')}</h4>
+                                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{t('efficiency.benefits.debt.desc')}</p>
                                 </div>
                             </li>
                         </ul>
@@ -62,11 +64,11 @@ const Efficiency = () => {
                                 <div>
                                     <h3 className="text-white font-bold text-xl flex items-center gap-2 mb-1">
                                         <span className="material-symbols-outlined text-accent-cyan">calculate</span>
-                                        Savings Calculator
+                                        {t('efficiency.calculator.title')}
                                     </h3>
                                     <p className="text-sm text-slate-400">
-                                        Example Swap: <span className="text-white font-semibold">USDC &rarr; ETH</span>
-                                        {!isDebtSwap && <span className="ml-2 py-0.5 px-2 bg-slate-800 text-xs rounded text-slate-300 border border-slate-700">Soon</span>}
+                                        {t('efficiency.calculator.example')} <span className="text-white font-semibold">USDC &rarr; ETH</span>
+                                        {!isDebtSwap && <span className="ml-2 py-0.5 px-2 bg-slate-800 text-xs rounded text-slate-300 border border-slate-700">{t('efficiency.calculator.soon')}</span>}
                                     </p>
                                 </div>
 
@@ -75,46 +77,46 @@ const Efficiency = () => {
                                         onClick={() => setIsDebtSwap(false)}
                                         className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${!isDebtSwap ? 'bg-primary text-white shadow-md' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
                                     >
-                                        Collateral
+                                        {t('efficiency.calculator.collateralTab')}
                                     </button>
                                     <button
                                         onClick={() => setIsDebtSwap(true)}
                                         className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${isDebtSwap ? 'bg-primary text-white shadow-md' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
                                     >
-                                        Debt
+                                        {t('efficiency.calculator.debtTab')}
                                     </button>
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-2 gap-4 mb-8">
                                 <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-4 flex flex-col items-center justify-center text-center">
-                                    <div className="text-xs text-slate-400 mb-2 font-medium">Official UI {isDebtSwap ? "(~0.05%)" : "(~0.30%)"}</div>
+                                    <div className="text-xs text-slate-400 mb-2 font-medium">{t('efficiency.calculator.officialUI')} {isDebtSwap ? "(~0.05%)" : "(~0.30%)"}</div>
                                     <div className="text-2xl font-display font-medium text-slate-300">
                                         ${officialFee.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                     </div>
-                                    <div className="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">Estimated Fee</div>
+                                    <div className="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">{t('efficiency.calculator.estimatedFee')}</div>
                                 </div>
 
                                 <div className="bg-primary/20 border border-primary/30 rounded-xl p-4 flex flex-col items-center justify-center relative overflow-hidden text-center shadow-[0_0_15px_rgba(168,85,247,0.15)]">
                                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent pointer-events-none"></div>
                                     <div className="text-xs text-white mb-2 font-bold flex items-center justify-center gap-1 relative z-10">
-                                        LilSwap <span className="bg-primary/30 text-primary-200 px-1.5 py-0.5 rounded text-[10px] uppercase">{isDebtSwap ? "0.00%" : "0.10%"}</span>
+                                        {t('comparison.table.lilswap')} <span className="bg-primary/30 text-primary-200 px-1.5 py-0.5 rounded text-[10px] uppercase">{isDebtSwap ? "0.00%" : "0.10%"}</span>
                                     </div>
                                     <div className="text-2xl font-display font-bold text-white relative z-10">
                                         ${lilSwapFee.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                     </div>
-                                    <div className="text-[10px] text-primary/80 mt-1 uppercase tracking-wider relative z-10 font-semibold">Estimated Fee</div>
+                                    <div className="text-[10px] text-primary/80 mt-1 uppercase tracking-wider relative z-10 font-semibold">{t('efficiency.calculator.estimatedFee')}</div>
                                 </div>
                             </div>
 
                             <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 mt-auto">
                                 <div className="flex justify-between items-end mb-4">
                                     <div>
-                                        <div className="text-sm text-slate-400 font-medium mb-1">Trade Size (USD)</div>
+                                        <div className="text-sm text-slate-400 font-medium mb-1">{t('efficiency.calculator.tradeSize')}</div>
                                         <div className="text-3xl font-display font-bold text-white">${tradeSize.toLocaleString()}</div>
                                     </div>
                                     <div className="text-right">
-                                        <div className="text-sm text-accent-cyan font-bold mb-1">You Save</div>
+                                        <div className="text-sm text-accent-cyan font-bold mb-1">{t('efficiency.calculator.youSave')}</div>
                                         <div className="flex items-baseline justify-end gap-2">
                                             <div className="text-2xl font-display font-bold text-accent-cyan">${savings.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
                                             <div className="text-xs font-bold text-accent-cyan/80 bg-accent-cyan/10 px-1.5 py-0.5 rounded">
@@ -137,7 +139,7 @@ const Efficiency = () => {
                             </div>
 
                             <div className="text-center mt-6">
-                                <p className="text-[11px] text-slate-500">*Network gas fees apply in all cases.</p>
+                                <p className="text-[11px] text-slate-500">{t('efficiency.calculator.disclaimer')}</p>
                             </div>
 
                         </div>

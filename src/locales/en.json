@@ -1,0 +1,185 @@
+{
+    "navbar": {
+        "subtitle": "AAVE V3 Position Manager",
+        "features": "Features",
+        "advantages": "Advantages",
+        "savings": "Savings",
+        "roadmap": "Roadmap",
+        "faq": "FAQ",
+        "swapNow": "Access App"
+    },
+    "hero": {
+        "tagline": "Fee-Optimized Interface",
+        "title1": "Cost-Efficient",
+        "title2": "Aave Position Manager",
+        "description": "The smart alternative for managing Aave v3 lending positions. Swap debt with 0% execution fees and save up to 67% on collateral swaps compared to the official interface.",
+        "accessApp": "Access App",
+        "docs": "Docs",
+        "soon": "Soon",
+        "stats": {
+            "maxSavings": "Max Savings",
+            "executionFee": "Execution Fee",
+            "direct": "Non-Custodial",
+            "smartContractCall": "Direct Protocol Access",
+            "instant": "Instant",
+            "settlement": "Atomic Execution"
+        },
+        "howItWorks": {
+            "title": "How it works:",
+            "desc1": "LilSwap acts as a lean execution layer directly on top of Aave's smart contracts.",
+            "desc2": "Since we only execute transactions against existing smart contracts, your funds remain securely in Aave, we just provide a cheaper, more efficient route for you."
+        }
+    },
+    "logosSection": {
+        "title": "Integrated with major V3 markets",
+        "moreComing": "More landing soon"
+    },
+    "dashboard": {
+        "title": "Swap-Focused Management",
+        "description": "Track your multi-chain net worth and execute lightning-fast debt and collateral swaps across all major markets from a single interface.",
+        "positions": "Multi-Chain Positions",
+        "updatedNow": "Updated just now",
+        "netWorth": "Net worth",
+        "netApy": "Net APY",
+        "healthFactor": "Health factor",
+        "supplies": "Supplies",
+        "soon": "Soon",
+        "borrows": "Borrows",
+        "swap": "Swap",
+        "noPositions": "No positions"
+    },
+    "features": {
+        "title": "DeFi Made Cost-Efficient",
+        "items": {
+            "efficiency": {
+                "title": "Built for Maximum Fee Efficiency",
+                "desc1": "A simple, straight-to-the-point interface focused on optimizing your lending position swaps without extra fees. Our architecture is lean by design so you save as much as possible.",
+                "desc2": "Only pay network gas, no added adapter fees for debt shifting. Execute pure 0% fee debt swaps directly via our dashboard."
+            },
+            "directAccess": {
+                "title": "Direct Protocol Access",
+                "desc": "Interact directly with the protocol's underlying smart contracts. No middleman, no delay, just clean and efficient execution."
+            },
+            "lowCost": {
+                "title": "Low-Cost Collateral Swaps",
+                "desc": "Feature under development that will offer fees up to 67% cheaper compared to conventional adapters throughout your collateral management."
+            }
+        }
+    },
+    "comparison": {
+        "title": "Why Choose LilSwap?",
+        "subtitle": "See how we stack up against the official interface.",
+        "table": {
+            "feature": "Feature",
+            "official": "Official Interface",
+            "lilswap": "LilSwap"
+        },
+        "features": {
+            "speed": {
+                "title": "Speed & Reliability",
+                "official": "Too many steps & Adapter delays",
+                "lilswap": "Direct & Instant Execution"
+            },
+            "debtFees": {
+                "title": "Debt Swap Fees",
+                "official": "Adapter Fees (~0.05%)",
+                "lilswap": "0% Execution Fee (Gas Only)"
+            },
+            "collatFees": {
+                "title": "Collateral Swap Fees",
+                "official": "Protocol + Adapter Fees (~0.30%)",
+                "lilswap": "67% Lower (~0.10%)"
+            },
+            "execType": {
+                "title": "Execution Type",
+                "official": "Adapter Dependent",
+                "lilswap": "Direct Smart Contract"
+            }
+        }
+    },
+    "efficiency": {
+        "title": "Maximized Economy",
+        "subtitle": "Stop overpaying on transaction costs. LilSwap optimizes your route to ensure you keep more of your hard-earned yield.",
+        "benefits": {
+            "collat": {
+                "title": "Save up to 67% on every collateral move",
+                "desc": "Drastically reduce swap fees compared to standard aggregator routes. Never pay 0.25% protocol + 0.05% execution fees again."
+            },
+            "debt": {
+                "title": "Pay $0 in protocol fees for debt shifting",
+                "desc": "Adapters charge a ~0.05% execution fee just to use them. We charge purely 0% execution fees for direct debt repayments and shifts."
+            }
+        },
+        "calculator": {
+            "title": "Savings Calculator",
+            "example": "Example Swap:",
+            "soon": "Soon",
+            "collateralTab": "Collateral",
+            "debtTab": "Debt",
+            "officialUI": "Official UI",
+            "estimatedFee": "Estimated Fee",
+            "tradeSize": "Trade Size (USD)",
+            "youSave": "You Save",
+            "disclaimer": "*Network gas fees apply in all cases."
+        }
+    },
+    "roadmap": {
+        "title": "Product Roadmap",
+        "subtitle": "Our vision for the future of LilSwap protocol development.",
+        "liveNow": "Live Now",
+        "phase1": {
+            "title": "Phase 1",
+            "subtitle": "Foundations & Debt Swaps",
+            "desc": "Establishing core debt swap features and deploying across major L2 networks for maximum accessibility."
+        },
+        "phase2": {
+            "title": "Phase 2",
+            "subtitle": "Collateral Swaps",
+            "desc": "Implementation of collateral swapping with highly optimized fees compared to standard protocol routes."
+        },
+        "phase3": {
+            "title": "Phase 3",
+            "subtitle": "MEV Protection",
+            "desc": "Integration with CoW Protocol and specialized infrastructure for secure, MEV-protected proxy execution."
+        }
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "q1": {
+            "title": "Is LilSwap a separate lending protocol?",
+            "desc": "No, LilSwap is simply an alternative, cost-efficient interface. You are interacting directly with Aave V3 smart contracts, just doing so through a highly optimized execution layer."
+        },
+        "q2": {
+            "title": "Why are your fees lower than the official interface?",
+            "desc": "In DeFi, execution fees (like the standard ~0.05% for debt swaps) are often treated as the 'norm' and can even be omitted by interfaces that claim to be fee-free. At LilSwap, we challenge this standard. Our fees are lower—and 0% for debt swaps—simply because we choose not to charge service fees where others hide them. We believe the value should stay with the user, providing total transparency on your real costs."
+        },
+        "q3": {
+            "title": "Do I need to migrate my positions to LilSwap?",
+            "desc": "Not at all. There is no 'migration' or deposit needed. Since LilSwap operates as a direct interface for the Aave V3 protocol, your existing positions will show up automatically the moment you connect your wallet. You can start optimizing your debt and collateral instantly without moving a single cent."
+        },
+        "q4": {
+            "title": "Is LilSwap a general-purpose token aggregator?",
+            "desc": "No. While standard aggregators are designed for swapping any tokens in your wallet, LilSwap is a specialized tool built exclusively for Aave V3 positions. We focus solely on converting debt and collateral within the protocol, providing highly optimized execution paths that general-purpose aggregators simply aren't designed to handle."
+        }
+    },
+    "cta": {
+        "title": "Ready to optimize your yield?",
+        "subtitle": "Start managing your lending positions with zero execution fees and maximum efficiency.",
+        "button": "Swap Now"
+    },
+    "footer": {
+        "tagline": "The ultimate interface for DeFi power users.",
+        "system": {
+            "checking": "Checking System...",
+            "offline": "System Offline",
+            "operational": "Systems Operational"
+        },
+        "resources": {
+            "title": "Resources",
+            "docs": "Documentation",
+            "api": "API",
+            "soon": "Soon"
+        },
+        "rights": "All rights reserved."
+    }
+}
