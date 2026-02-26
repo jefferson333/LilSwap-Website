@@ -57,7 +57,6 @@ jobs:
 
             # Create Subdomain Symlinks
             ln -sfn $ROOT/app/current $REL_DIR/app
-            ln -sfn $ROOT/api/current $REL_DIR/api
 
             # Transition Check: Backup physical directory if it exists
             if [ -d "$ROOT/public_html" ] && [ ! -L "$ROOT/public_html" ]; then
