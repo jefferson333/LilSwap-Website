@@ -1,3 +1,10 @@
+# Block access to the subdomains' folders from the main domain
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^(www\.)?lilswap\.xyz$ [NC]
+  RewriteRule ^(api|app)(/.*)?$ - [F]
+</IfModule>
+
 # Standard SPA routing for React/Vite
 <IfModule mod_rewrite.c>
   RewriteEngine On
