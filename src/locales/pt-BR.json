@@ -143,7 +143,7 @@
         "phase1": {
             "title": "Fase 1",
             "subtitle": "Swaps de Dívida & Eficiência",
-            "desc": "Foco total em swaps de dívida com 0% de taxa de execução. Disponível atualmente nos mercados V3 mais populares: Ethereum, BNB, Polygon e Base."
+            "desc": "Foco total em swaps de dívida com 0% de taxa de execução. Disponível atualmente nos mercados V3 mais populares: Ethereum, Base, BNB, Polygon e Arbitrum."
         },
         "phase2": {
             "title": "Fase 2",

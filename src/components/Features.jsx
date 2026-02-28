@@ -37,10 +37,10 @@ const Features = () => {
                                             <img src="/icons/networks/base.svg" alt="Base" className="w-full h-full object-contain" />
                                         </div>
                                         <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center p-1.5 shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary/50 transition-colors">
-                                            <img src="/icons/networks/polygon.svg" alt="Polygon" className="w-full h-full object-contain" />
+                                            <img src="/icons/networks/binance.svg" alt="BNB Chain" className="w-full h-full object-contain" />
                                         </div>
                                         <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center p-1.5 shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary/50 transition-colors">
-                                            <img src="/icons/networks/binance.svg" alt="BNB Chain" className="w-full h-full object-contain" />
+                                            <img src="/icons/networks/polygon.svg" alt="Polygon" className="w-full h-full object-contain" />
                                         </div>
                                         <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center p-1.5 shadow-sm border border-slate-100 dark:border-slate-700 hover:border-primary/50 transition-colors">
                                             <img src="/icons/networks/arbitrum.svg" alt="Arbitrum" className="w-full h-full object-contain" />

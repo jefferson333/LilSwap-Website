@@ -143,7 +143,7 @@
         "phase1": {
             "title": "Phase 1",
             "subtitle": "Debt Swaps & Efficiency",
-            "desc": "Main focus on 0% execution fee debt swaps. Currently available on the most popular V3 markets: Ethereum, BNB, Polygon, and Base."
+            "desc": "Main focus on 0% execution fee debt swaps. Currently available on the most popular V3 markets: Ethereum, Base, BNB, Polygon, and Arbitrum."
         },
         "phase2": {
             "title": "Phase 2",
