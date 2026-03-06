@@ -17,7 +17,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Load the English translations (source of truth for SEO content)
 const en = JSON.parse(
-    readFileSync(join(__dirname, 'src/locales/en.json'), 'utf-8')
+  readFileSync(join(__dirname, 'src/locales/en.json'), 'utf-8')
 );
 
 // ---------------------------------------------------------------------------
@@ -26,7 +26,7 @@ const en = JSON.parse(
 // by React on hydration.
 // ---------------------------------------------------------------------------
 const staticHTML = `
-<div data-prerendered="true" aria-hidden="false">
+<div data-prerendered="true" aria-hidden="true" style="display: none;">
   <!-- Hero -->
   <section>
     <h1>${en.hero.title1} ${en.hero.title2}</h1>
@@ -111,11 +111,11 @@ const EMPTY_ROOT = '<div id="root"></div>';
 const FILLED_ROOT = `<div id="root">${staticHTML}</div>`;
 
 if (!html.includes(EMPTY_ROOT)) {
-    console.warn(
-        '[prerender] Warning: Could not find empty root div in dist/index.html. ' +
-        'Skipping injection (root may already have content).'
-    );
-    process.exit(0);
+  console.warn(
+    '[prerender] Warning: Could not find empty root div in dist/index.html. ' +
+    'Skipping injection (root may already have content).'
+  );
+  process.exit(0);
 }
 
 const result = html.replace(EMPTY_ROOT, FILLED_ROOT);
