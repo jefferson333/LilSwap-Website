@@ -208,6 +208,9 @@
         "networkRestriction": "ERC-20 tokens only (no native BTC)",
         "copyTitle": "Copy address",
         "copied": "Copied!",
-        "copiedMessage": "Address copied to clipboard."
+        "copiedMessage": "Address copied to clipboard.",
+        "rewardsTitle": "Donator Rewards",
+        "rewardsDesc": "Donate $1 or more in bluechip ERC-20 tokens to unlock a 10% discount on any fee in the app for a limited time!",
+        "detectionDisclaimer": "* Donator detection happens automatically every ~5 minutes after your transaction confirms."
     }
 }

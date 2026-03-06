@@ -208,6 +208,9 @@
         "networkRestriction": "Apenas tokens ERC-20 (sem BTC nativo)",
         "copyTitle": "Copiar endereço",
         "copied": "Copiado!",
-        "copiedMessage": "Endereço copiado para o clipboard."
+        "copiedMessage": "Endereço copiado para o clipboard.",
+        "rewardsTitle": "Recompensas para Doadores",
+        "rewardsDesc": "Doe $1 ou mais em tokens ERC-20 bluechip para garantir um desconto de 10% em qualquer taxa no aplicativo por tempo limitado!",
+        "detectionDisclaimer": "* A detecção do doador ocorre automaticamente a cada ~5 minutos após a confirmação da sua transação."
     }
 }
