@@ -24,6 +24,7 @@ const LilLogo = ({ className = "w-6 h-6" }) => (
 const Footer = ({ isDarkMode, toggleDarkMode }) => {
     const { t } = useTranslation();
     const [isDonateOpen, setIsDonateOpen] = useState(false);
+
     return (
         <footer className="bg-white dark:bg-background-dark border-t border-border-light dark:border-border-dark pt-12 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,7 +40,7 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
                         </p>
                         <div className="flex items-center gap-6">
                             <div className="flex gap-4">
-                                <a className="text-slate-400 hover:text-primary transition" href="https://x.com/0xInkCrypto" target="_blank" rel="noopener noreferrer">
+                                <a className="text-slate-400 hover:text-primary transition" href="https://x.com/LilSwap_" target="_blank" rel="noopener noreferrer">
                                     <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                                     </svg>
@@ -51,7 +52,6 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
                                 </a>
                             </div>
 
-                            {/* Theme Toggle - Lightbulb */}
                             <button
                                 onClick={toggleDarkMode}
                                 className="flex items-center gap-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors cursor-pointer group"
@@ -70,7 +70,6 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
                             </button>
                         </div>
 
-                        {/* Donate Button - New Position */}
                         <div className="mt-4">
                             <button
                                 onClick={() => setIsDonateOpen(true)}
@@ -82,16 +81,6 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
                         </div>
                     </div>
 
-                    {/* <div className="hidden">
-                        <h4 className="font-bold mb-4 dark:text-white">Product</h4>
-                        <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-                            <li><a className="hover:text-primary transition" href="#dashboard">Dashboard</a></li>
-                            <li><a className="hover:text-primary transition" href="#">Swap</a></li>
-                            <li><a className="hover:text-primary transition" href="#">Earn</a></li>
-                            <li><a className="hover:text-primary transition" href="#">Bridge</a></li>
-                        </ul>
-                    </div> */}
-
                     <div>
                         <h4 className="font-bold mb-4 dark:text-white">{t('footer.resources.title')}</h4>
                         <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-400">
@@ -101,20 +90,8 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
                                     <span className="text-[10px] uppercase bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 px-1.5 py-0.5 rounded font-bold group-hover:text-primary group-hover:bg-primary/10 transition">{t('footer.resources.soon')}</span>
                                 </Link>
                             </li>
-
-                            {/* <li><a className="hover:text-primary transition" href="#">Audits</a></li> */}
-                            {/* <li><a className="hover:text-primary transition" href="#">Brand Kit</a></li> */}
                         </ul>
                     </div>
-
-                    {/* <div className="hidden">
-                        <h4 className="font-bold mb-4 dark:text-white">Legal</h4>
-                        <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-                            <li><a className="hover:text-primary transition" href="#">Terms of Service</a></li>
-                            <li><a className="hover:text-primary transition" href="#">Privacy Policy</a></li>
-                        </ul>
-                    </div> */}
-
                 </div>
 
                 <div className="border-t border-border-light dark:border-border-dark pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 dark:text-slate-500">
