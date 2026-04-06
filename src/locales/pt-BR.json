@@ -140,7 +140,8 @@
     "roadmap": {
         "title": "Nossa Jornada",
         "subtitle": "Acompanhe nossa evolução enquanto simplificamos e barateamos a gestão das suas posições.",
-        "liveNow": "No Ar",
+        "completed": "Concluído",
+        "upNext": "Próxima",
         "cta": "Acessar agora e ver novidades",
         "phase1": {
             "title": "Fase 1",
@@ -150,12 +151,12 @@
         "phase2": {
             "title": "Fase 2",
             "subtitle": "Swaps de Colateral & Expansão",
-            "desc": "Disponível agora. Trocas de colateral com taxas 67% menores integrando os roteadores mais eficientes do mercado."
+            "desc": "As trocas de colateral já estão no ar com taxas mais de 67% menores, além do suporte a todas as redes e markets que oferecem a funcionalidade de swap da Aave V3."
         },
         "phase3": {
             "title": "Fase 3",
-            "subtitle": "Proteção Anti-MEV (CoW Protocol)",
-            "desc": "Integração total com o CoW Protocol para trades protegidos contra ataques MEV (front-running). Garanta o melhor preço e execução justa em todas as operações."
+            "subtitle": "Expansão do Gerenciamento de Posições",
+            "desc": "Limit order swaps e ações nativas na Aave para supply, borrow, repay e withdraw, além de swaps na carteira entre quaisquer pares de tokens suportados."
         }
     },
     "faq": {
@@ -204,17 +205,22 @@
         "lightOn": "Apagar a luz",
         "lightOff": "Acender a luz",
         "donate": "Donate",
+        "donateDiscountTag": "10% de desconto nas taxas",
         "rights": "Todos os direitos reservados."
     },
     "donateModal": {
         "title": "Pague um café pra gente",
-        "sendInstruction": "Envie BTC, ETH ou Stablecoins",
-        "networkRestriction": "Apenas tokens ERC-20 (sem BTC nativo)",
+        "sendInstruction": "Envie stablecoins, ETH ou wrappers de BTC",
+        "networkRestriction": "Apenas tokens ERC-20 suportados",
         "copyTitle": "Copiar endereço",
         "copied": "Copiado!",
         "copiedMessage": "Endereço copiado para o clipboard.",
         "rewardsTitle": "Recompensas para Doadores",
-        "rewardsDesc": "Doe $1 ou mais em tokens ERC-20 bluechip para garantir um desconto de 10% em qualquer taxa no aplicativo por tempo limitado!",
-        "detectionDisclaimer": "* A detecção do doador ocorre automaticamente a cada ~5 minutos após a confirmação da sua transação."
+        "rewardsDescBefore": "Desbloqueie ",
+        "rewardsDescDiscount": "10% de desconto nas taxas",
+        "rewardsDescMiddle": " por tempo limitado ao doar ",
+        "rewardsDescAmount": "$1 ou mais",
+        "rewardsDescAfter": ".",
+        "detectionDisclaimer": "A detecção de doadores acontece automaticamente em até 15 minutos após a confirmação da sua transação, geralmente em menos de 5 minutos."
     }
 }

@@ -140,7 +140,8 @@
     "roadmap": {
         "title": "Our Journey",
         "subtitle": "Track our evolution as we simplify and lower the cost of managing your positions.",
-        "liveNow": "Live Now",
+        "completed": "Completed",
+        "upNext": "Up Next",
         "cta": "Access now and see what's new",
         "phase1": {
             "title": "Phase 1",
@@ -150,12 +151,12 @@
         "phase2": {
             "title": "Phase 2",
             "subtitle": "Collateral Swaps & Expansion",
-            "desc": "Available now. Collateral swaps with over 67% lower fees by integrating the market's most efficient routers."
+            "desc": "Collateral swaps are now live with over 67% lower fees, plus support for every network and market that offers Aave V3 swap functionality."
         },
         "phase3": {
             "title": "Phase 3",
-            "subtitle": "MEV Protection (CoW Protocol)",
-            "desc": "Full integration with CoW Protocol for MEV-protected trades. Get the best prices with protection against front-running and sandwich attacks."
+            "subtitle": "Position Management Expansion",
+            "desc": "Limit order swaps and native Aave actions for supply, borrow, repay, and withdraw, plus wallet swaps for any supported token pair."
         }
     },
     "faq": {
@@ -204,17 +205,22 @@
         "lightOn": "Turn the lights off",
         "lightOff": "Turn the lights on",
         "donate": "Donate",
+        "donateDiscountTag": "10% off fees",
         "rights": "All rights reserved."
     },
     "donateModal": {
         "title": "Buy us a coffee",
-        "sendInstruction": "Send BTC, ETH or Stablecoins",
-        "networkRestriction": "ERC-20 tokens only (no native BTC)",
+        "sendInstruction": "Send stablecoins, ETH, or BTC wrappers",
+        "networkRestriction": "Supported ERC-20 tokens only",
         "copyTitle": "Copy address",
         "copied": "Copied!",
         "copiedMessage": "Address copied to clipboard.",
         "rewardsTitle": "Donator Rewards",
-        "rewardsDesc": "Donate $1 or more in bluechip ERC-20 tokens to unlock a 10% discount on any fee in the app for a limited time!",
-        "detectionDisclaimer": "* Donator detection happens automatically every ~5 minutes after your transaction confirms."
+        "rewardsDescBefore": "Unlock a ",
+        "rewardsDescDiscount": "10% fee discount",
+        "rewardsDescMiddle": " for a limited time by donating ",
+        "rewardsDescAmount": "$1 or more",
+        "rewardsDescAfter": ".",
+        "detectionDisclaimer": "Donator detection happens automatically within up to 15 minutes after your transaction confirms, usually in under 5 minutes."
     }
 }

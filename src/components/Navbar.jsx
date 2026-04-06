@@ -38,7 +38,7 @@ const FlagBR = () => (
     </svg>
 );
 
-const Navbar = () => {
+const Navbar = ({ isDarkMode, toggleDarkMode }) => {
     const { t, i18n } = useTranslation();
     const [isLangOpen, setIsLangOpen] = useState(false);
     const langRef = useRef(null);
@@ -101,9 +101,9 @@ const Navbar = () => {
                     </div>
 
                     {/* Actions */}
-                    <div className="flex items-center gap-2 sm:gap-4">
+                    <div className="flex items-center gap-2 sm:gap-3">
                         {/* Language Dropdown */}
-                        <div className="relative mr-1 sm:mr-2" ref={langRef}>
+                        <div className="relative" ref={langRef}>
                             <button
                                 onClick={() => setIsLangOpen(!isLangOpen)}
                                 className="flex items-center gap-2 text-[10px] sm:text-xs font-bold px-2 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-sm"
@@ -134,6 +134,22 @@ const Navbar = () => {
                                 </div>
                             )}
                         </div>
+                        <button
+                            onClick={toggleDarkMode}
+                            className="flex shrink-0 items-center justify-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors cursor-pointer group"
+                            aria-label={isDarkMode ? t('footer.lightOff') : t('footer.lightOn')}
+                            title={isDarkMode ? t('footer.lightOff') : t('footer.lightOn')}
+                        >
+                            <span
+                                className={`material-symbols-outlined text-[18px] leading-none transition-all duration-300 ${isDarkMode
+                                    ? 'text-slate-500 dark:text-slate-600 group-hover:text-slate-400'
+                                    : 'text-yellow-400 group-hover:text-yellow-500 drop-shadow-[0_0_6px_rgba(250,204,21,0.7)]'
+                                    }`}
+                                style={{ fontVariationSettings: isDarkMode ? "'FILL' 0, 'GRAD' 0" : "'FILL' 1, 'GRAD' 200" }}
+                            >
+                                lightbulb
+                            </span>
+                        </button>
                         <a href="https://app.lilswap.xyz" className="bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-bold px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl transition-all shadow-lg shadow-primary/20 active:scale-95 whitespace-nowrap">
                             {t('navbar.swapNow')}
                         </a>

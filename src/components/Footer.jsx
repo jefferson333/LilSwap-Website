@@ -85,7 +85,7 @@ const Footer = ({ isDarkMode, toggleDarkMode }) => {
                                 </span>
                                 
                                 <div className="flex items-center px-2 py-0.5 rounded-full bg-primary/5 dark:bg-accent-cyan/10 text-[10px] font-bold text-primary dark:text-accent-cyan uppercase tracking-wider whitespace-nowrap">
-                                    10% off fees
+                                    {t('footer.donateDiscountTag')}
                                 </div>
                             </div>
                         </div>

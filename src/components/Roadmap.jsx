@@ -14,7 +14,10 @@ const Roadmap = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
                     <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-linear-to-r from-primary/20 via-primary/50 to-primary/20 -translate-y-1/2 z-0 rounded-full"></div>
 
-                    <div className="relative z-10 bg-white dark:bg-card-dark rounded-2xl p-8 border border-border-light dark:border-border-dark shadow-lg flex flex-col h-full opacity-100 hover:ring-2 hover:ring-primary/20 hover:shadow-xl transition-opacity duration-300">
+                    <div className="relative z-10 bg-white dark:bg-card-dark rounded-2xl p-8 border border-border-light dark:border-border-dark shadow-lg flex flex-col h-full ring-2 ring-primary/25 hover:shadow-xl transition-opacity duration-300">
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 md:left-auto md:right-4 md:translate-x-0">
+                            <span className="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg shadow-primary/30 uppercase tracking-wide">{t('roadmap.completed')}</span>
+                        </div>
                         <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg mb-6 shadow-lg shadow-primary/40 mx-auto md:mx-0">1</div>
                         <h3 className="text-xl font-bold mb-2 dark:text-white">{t('roadmap.phase1.title')}</h3>
                         <h4 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">{t('roadmap.phase1.subtitle')}</h4>
@@ -23,9 +26,9 @@ const Roadmap = () => {
                         </p>
                     </div>
 
-                    <div className="relative z-10 bg-white dark:bg-card-dark rounded-2xl p-8 border border-border-light dark:border-border-dark shadow-lg flex flex-col h-full ring-2 ring-primary/30 animate-[breathe_3s_ease-in-out_infinite]" style={{ animation: 'breathe 3s ease-in-out infinite' }}>
+                    <div className="relative z-10 bg-white dark:bg-card-dark rounded-2xl p-8 border border-border-light dark:border-border-dark shadow-lg flex flex-col h-full ring-2 ring-primary/25 hover:shadow-xl transition-opacity duration-300">
                         <div className="absolute -top-4 left-1/2 -translate-x-1/2 md:left-auto md:right-4 md:translate-x-0">
-                            <span className="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg shadow-primary/30 uppercase tracking-wide">{t('roadmap.liveNow')}</span>
+                            <span className="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg shadow-primary/30 uppercase tracking-wide">{t('roadmap.completed')}</span>
                         </div>
                         <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg mb-6 shadow-lg shadow-primary/40 mx-auto md:mx-0">2</div>
                         <h3 className="text-xl font-bold mb-2 dark:text-white">{t('roadmap.phase2.title')}</h3>
@@ -35,7 +38,10 @@ const Roadmap = () => {
                         </p>
                     </div>
 
-                    <div className="relative z-10 bg-white dark:bg-card-dark rounded-2xl p-8 border border-border-light dark:border-border-dark shadow-lg flex flex-col h-full opacity-100 hover:ring-2 hover:ring-primary/20 hover:shadow-xl transition-opacity duration-300">
+                    <div className="relative z-10 bg-white dark:bg-card-dark rounded-2xl p-8 border border-primary/30 dark:border-accent-cyan/30 shadow-lg flex flex-col h-full ring-2 ring-primary/20 dark:ring-accent-cyan/20 hover:shadow-xl transition-opacity duration-300 animate-[breathe_3s_ease-in-out_infinite]" style={{ animation: 'breathe 3s ease-in-out infinite' }}>
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 md:left-auto md:right-4 md:translate-x-0">
+                            <span className="bg-accent-orange text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg shadow-orange-500/20 uppercase tracking-wide animate-pulse">{t('roadmap.upNext')}</span>
+                        </div>
                         <div className="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-300 flex items-center justify-center font-bold text-lg mb-6 mx-auto md:mx-0">3</div>
                         <h3 className="text-xl font-bold mb-2 dark:text-white">{t('roadmap.phase3.title')}</h3>
                         <h4 className="text-sm font-semibold text-accent-orange uppercase tracking-wider mb-4">{t('roadmap.phase3.subtitle')}</h4>

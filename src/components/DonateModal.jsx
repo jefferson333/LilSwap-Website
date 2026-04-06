@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Modal } from './Modal.jsx';
-import { Copy, CheckCircle2, Coffee, Percent } from 'lucide-react';
+import { CheckCircle2, Coffee, Copy, Info, Trophy } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Modal } from './Modal.jsx';
 
 export const DonateModal = ({ isOpen, onClose }) => {
     const { t } = useTranslation();
     const [copied, setCopied] = useState(false);
 
-    const evmAddress = "0x41dB8386872ffab478d4ce798782E71b717745dA";
+    const evmAddress = '0x41dB8386872ffab478d4ce798782E71b717745dA';
 
     const handleCopy = () => {
         navigator.clipboard.writeText(evmAddress);
@@ -16,41 +16,45 @@ export const DonateModal = ({ isOpen, onClose }) => {
     };
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose} title={
-            <div className="flex items-center gap-2">
-                <Coffee className="w-5 h-5 text-purple-500" />
-                <span>{t('donateModal.title')}</span>
-            </div>
-        } maxWidth="400px">
-            <div className="p-4 sm:p-5 flex flex-col gap-6">
-
-                {/* Rewards Info */}
-                <div className="bg-linear-to-br from-primary/10 via-fuchsia-500/10 to-transparent border border-primary/20 rounded-xl p-4 flex flex-col gap-2">
-                    <div className="flex items-center gap-2 text-primary">
-                        <span className="text-xl">🏆</span>
-                        <span className="text-sm font-extrabold uppercase tracking-wider">{t('donateModal.rewardsTitle')}</span>
-                    </div>
-                    <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-                        {t('donateModal.rewardsDesc')} 💜
-                    </p>
-                    <div className="flex items-start gap-2 mt-2 text-[10px] text-slate-500 dark:text-slate-400 bg-white/50 dark:bg-black/20 p-2 rounded-lg shadow-sm">
-                        <span className="text-xs">⚡</span>
-                        <p className="font-medium">{t('donateModal.detectionDisclaimer')}</p>
+        <Modal
+            isOpen={isOpen}
+            onClose={onClose}
+            title={
+                <div className="flex items-center gap-2">
+                    <Coffee className="h-5 w-5 text-purple-500 dark:text-[#2EBDE3]" />
+                    <span>{t('donateModal.title')}</span>
+                </div>
+            }
+            maxWidth="400px"
+        >
+            <div className="flex flex-col gap-5 p-4 pt-3 sm:p-5 sm:pt-3">
+                <div className="-mx-4 -mt-2 flex flex-col gap-2 bg-linear-to-br from-primary/10 via-fuchsia-500/10 to-transparent px-4 py-4 sm:-mx-5 sm:px-5">
+                    <div className="flex flex-col gap-2">
+                        <div className="flex items-center gap-2 text-primary">
+                            <Trophy className="h-4.5 w-4.5 shrink-0" />
+                            <span className="text-sm font-extrabold uppercase tracking-wider">{t('donateModal.rewardsTitle')}</span>
+                        </div>
+                        <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                            {t('donateModal.rewardsDescBefore')}
+                            <strong className="font-bold text-primary">{t('donateModal.rewardsDescDiscount')}</strong>
+                            {t('donateModal.rewardsDescMiddle')}
+                            <strong className="font-bold text-primary">{t('donateModal.rewardsDescAmount')}</strong>
+                            {t('donateModal.rewardsDescAfter')}
+                        </p>
                     </div>
                 </div>
 
-                {/* QR Code */}
                 <div className="flex flex-col items-center gap-4">
-                    <div className="bg-white p-3 rounded-xl shadow-sm border border-slate-200">
+                    <div className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
                         <img
                             src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(evmAddress)}`}
                             alt="EVM QR Code"
-                            className="w-48 h-48"
+                            className="h-48 w-48"
                         />
                     </div>
 
                     <div className="text-center">
-                        <p className="text-sm font-medium text-slate-900 dark:text-white mb-1">
+                        <p className="mb-1 text-sm font-medium text-slate-900 dark:text-white">
                             {t('donateModal.sendInstruction')}
                         </p>
                         <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -59,24 +63,27 @@ export const DonateModal = ({ isOpen, onClose }) => {
                     </div>
                 </div>
 
-                {/* Address Display & Copy */}
-                <div className="flex items-center justify-center gap-2 p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700">
-                    <p className="text-xs font-mono text-slate-600 dark:text-slate-300 truncate">
+                <div className="mx-auto inline-flex max-w-full items-center justify-center gap-2 rounded-md border border-slate-200/70 bg-slate-50 px-3 py-2 dark:border-slate-700/70 dark:bg-slate-800/30">
+                    <p className="truncate font-mono text-sm text-slate-600 dark:text-slate-300">
                         {`0x${evmAddress.slice(2, 10)}...${evmAddress.slice(-6)}`}
                     </p>
                     <button
                         onClick={handleCopy}
-                        className="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors shrink-0 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-white"
+                        className="shrink-0 rounded-sm p-1 text-slate-500 transition-colors hover:bg-slate-200 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-white"
                         title={t('donateModal.copyTitle')}
                     >
                         {copied ? (
-                            <CheckCircle2 className="w-4 h-4 text-green-500" />
+                            <CheckCircle2 className="h-4 w-4 text-green-500" />
                         ) : (
-                            <Copy className="w-4 h-4" />
+                            <Copy className="h-4 w-4" />
                         )}
                     </button>
                 </div>
 
+                <div className="flex items-start gap-2 text-xs text-slate-500 dark:text-slate-400">
+                    <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                    <p className="font-medium">{t('donateModal.detectionDisclaimer')}</p>
+                </div>
             </div>
         </Modal>
     );

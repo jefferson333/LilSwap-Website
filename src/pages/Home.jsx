@@ -14,7 +14,7 @@ import Footer from '../components/Footer';
 function Home({ isDarkMode, toggleDarkMode }) {
     return (
         <>
-            <Navbar />
+            <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
             <main className="grow">
                     <Hero />
                 <div className="bg-slate-50/80 dark:bg-slate-900/40 border-y border-slate-100 dark:border-slate-800/50">
